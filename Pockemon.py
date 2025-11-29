@@ -30,3 +30,6 @@ vulpix=Pokemon('vulpix',8,3,'fogo')
 ash=Treinador()
 lista_Pokemon=[pikachu,caterpie,jamsie,vulpix]
 lista_Treinador=[ash]
+#Para herança, super e polimorfismo:
+#entender o que o pokemon e o treinador tem em comum (personagem)
+#criar a classe super do personagem e criar 2 subclasses (pokemon e treinador)
