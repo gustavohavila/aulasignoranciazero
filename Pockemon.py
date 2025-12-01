@@ -5,18 +5,29 @@
 # inseto tem ataque +3 contra tipo raio
 #inseto tem ataque -3 contra tipo agua
 
-class Pokemon(object):
-    def __init__(self,nome,ataque,raio,dono='sem_dono'):
+lista_evolução=[('Cartepie','Metapod','Buterfree'),('Charmander','Charmeleon','Charizard','Mega Charizard'),('Pichu','Picachu','Raichu'),('Bulbasaur','Ivysaur','Venusaur') ]
+
+
+class Personagem(object):
+    def __init__(self,nome,nível):
         self.nome=nome
+        self.nível=nível
+    
+
+class Pokemon(Personagem):
+    def __init__(self,nome,ataque,raio,dono='sem_dono',nível=0):
+        super(Personagem,self).__init__(nome,nível)
         self.ataque=ataque
         self.tipo=raio
         self.dono=dono
         print("Pokemon criado, nome: %s" %(nome))
     def atacar(self,ataque):
         self.ataque=ataque
-class Treinador(object):
-    def __init(self,nome,pokemon='nenhum'):
-        self.nome=nome
+    def evoluir(self):
+        pass
+class Treinador(Personagem):
+    def __init(self,nome,pokemon='nenhum',nível=0):
+        super(Personagem,self).__init__(nome,nível)
         self.pokemon=pokemon
         self.lista_pokemon=[pikachu]
     def capturar(self):
@@ -33,3 +44,4 @@ lista_Treinador=[ash]
 #Para herança, super e polimorfismo:
 #entender o que o pokemon e o treinador tem em comum (personagem)
 #criar a classe super do personagem e criar 2 subclasses (pokemon e treinador)
+#pokemon tem nível, personagem tbm.

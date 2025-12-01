@@ -17,7 +17,6 @@ class Mamífero:
 class Pessoa(Mamífero):
     def __init__(self, cor_de_pelo, genero,andar,cabelo):
         super(Pessoa, self).__init__(cor_de_pelo,genero,andar)
-            
         self.cabelo='Loiro'
     def falar(self):
         super(Pessoa, self).falar()
