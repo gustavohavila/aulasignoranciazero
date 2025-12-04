@@ -45,3 +45,7 @@ lista_Treinador=[ash]
 #entender o que o pokemon e o treinador tem em comum (personagem)
 #criar a classe super do personagem e criar 2 subclasses (pokemon e treinador)
 #pokemon tem nível, personagem tbm.
+
+#Para abstração criar um metodo vazio
+#para atributos estaticos, criar valores globais(da classe)
+#para encapsulamento, criar encapsulamento de valores que o player naõ precisa acessar.
