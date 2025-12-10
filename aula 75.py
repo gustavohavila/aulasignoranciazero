@@ -1,46 +1,40 @@
-#del --> delete --> deletar/apagar
+#pacotes de bytes? struct
+#ord('a') #=97
+#x=b'palavra' #uma string representado por byte
+#x[0]#112, que é igual a ord('p')
 
-x=10
-del x
-try:
-    print(x)
+#para que usar? para usar arquivos codificados com pacotes de bytes.
+#arquivos da internet.
+#em arquivos avançados, criar ou lidar com esses arquivos.
 
-finally:
+#int, float.
+"""
+import struct #permite criar pacote de bytes.
+nome='Joao'
+idade=23
+altura=1.7
 
-    l=[1,2,3]
+cod=struct.pack('4s I f',nome.encode(),idade,altura)
 
-    del l[2]
+arq=open('pessoa.cod','wb')
+arq.write(cod)
+arq.close()
 
-    print(l)
+arq=open('pessoa.cod','rb')
+cod_ab=arq.readline()
+cod_ab
+cod_desp=struct.unpack('4s I f',cod_ab)
+print(cod_desp)
+Ns string de N char, I inteiro pequeno, Q inteiro grande, f float pequeno,
+d float grande, ? bool
 
-t=1,2,3
+import struct
+t=(b'joao',23,1.75)
 
-del t[2]
-
-s='string'
-del s[4]
-
-d={'1':1,'2':2,'3':3}
-
-class Pessoa(object):
-    def __init__(self,nome,idade):
-        self.nome=nome
-        self.idade=idade
-    def nome2(self):
-        print('ola eu sou o',self.nome)
-joao=Pessoa('Joao',23)
-del joao.nome
-joao.nome
-del joao.nome2()
+s=struct.Struct('4s I f')
 
 
-#is vem do ingles é
-
-[1,2,3]==[1,2,3]
-
-[1,2,3]is[1,2,3] #vai dizer uqe não é.. pq e mais profundo.
-def __eq__ #vai fazer comparaçaõ entre os IDs das listas.
-l1=[1,2,3]
-l2=l1
-
-l1 is l2 #TRUE
+data=s.pack(*t)
+s.unpack(data)
+arq.write(
+"""
